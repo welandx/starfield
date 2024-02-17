@@ -26,11 +26,11 @@ fn word_to_pinyin(hans: &String, map: &HashMap<String, Vec<String>>) -> (String,
 }
 
 fn apply_danzi_correction(
-    han: &str,
-    res: &mut String,
+    han:          &str,
+    res:          &mut String,
     prefix_index: &mut usize,
-    danzi: &HashMap<String, Vec<String>>,
-    code: &HashMap<String, bool>,
+    danzi:        &HashMap<String, Vec<String>>,
+    code:         &HashMap<String, bool>,
 ) {
     while res.len() < 6 {
         if code.contains_key(res) {
@@ -51,11 +51,11 @@ fn apply_danzi_correction(
 }
 
 pub fn word2(
-    hans: &String,
-    map: &HashMap<String, Vec<String>>,
+    hans:  &String,
+    map:   &HashMap<String, Vec<String>>,
     danzi: &HashMap<String, Vec<String>>,
-    word: &HashMap<String, bool>,
-    code: &HashMap<String, bool>,
+    word:  &HashMap<String, bool>,
+    code:  &HashMap<String, bool>,
 ) {
     if word.contains_key(hans) {
         return;
@@ -86,11 +86,11 @@ pub fn word2(
 }
 
 pub fn word3(
-    hans: &String,
-    map: &HashMap<String, Vec<String>>,
+    hans:  &String,
+    map:   &HashMap<String, Vec<String>>,
     danzi: &HashMap<String, Vec<String>>,
-    word: &HashMap<String, bool>,
-    code: &HashMap<String, bool>,
+    word:  &HashMap<String, bool>,
+    code:  &HashMap<String, bool>,
 ) {
     let han = &hans[..];
     let mut res = String::new();
