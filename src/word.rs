@@ -33,8 +33,8 @@ fn word_to_pinyin(hans: &String, map: &HashMap<String, Vec<String>>) -> (String,
     for pinyin in han.to_pinyin() {
         if let Some(pinyin) = pinyin {
             let current_pinyin = map.get(pinyin.plain()).unwrap();
-                res.push_str(&current_pinyin[0]);
-                res_fly.push_str(&current_pinyin[0]);
+            res.push_str(&current_pinyin[0]);
+            res_fly.push_str(&current_pinyin[0]);
 
             if current_pinyin.len() == 2 {
                 has_fly = true;
@@ -84,42 +84,11 @@ pub fn word2(
         return;
     }
 
-    let (mut res, mut res_fly, has_fly) = word_to_pinyin(hans, map);
-
-    if has_fly {
-        let mut index = 0;
-        while res_fly.len() < 6 {
-            if code.contains_key(&res_fly) {
-                res_fly.push(
-                    danzi.get(&hans[index..index + 3]).unwrap()[0]
-                        .chars()
-                        .nth(2)
-                        .unwrap(),
-                );
-                index += 3;
-            } else {
-                break;
-            }
-        }
-        println!("{}\t{}", hans, res_fly);
-    }
-
-    let mut index = 0;
-    apply_danzi_correction(hans, &mut res, &mut index, danzi, code);
-}
-
-pub fn word3(
-    hans: &String,
-    map: &HashMap<String, Vec<String>>,
-    danzi: &HashMap<String, Vec<String>>,
-    word: &HashMap<String, bool>,
-    code: &HashMap<String, bool>,
-) {
-    if word.contains_key(hans) {
-        return;
-    }
-
-    let (mut res, mut res_fly, has_fly) = word_to_pinyin3(hans, map);
+    let (mut res, mut res_fly, has_fly) = if hans.chars().count() == 2 {
+        word_to_pinyin(hans, map)
+    } else {
+        word_to_pinyin3(hans, map)
+    };
 
     if has_fly {
         let mut index = 0;

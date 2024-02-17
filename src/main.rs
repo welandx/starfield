@@ -23,8 +23,7 @@ fn main() {
         let i = line.unwrap().to_string();
         let len = &i.len();
         match len / 3 {
-            2     => word::word2(&i, &map, &danzi, &word, &code),
-            3 | 4 => word::word3(&i, &map, &danzi, &word, &code),
+            2 |3 | 4 => word::word2(&i, &map, &danzi, &word, &code),
             _     => {}
         };
     }
