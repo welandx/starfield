@@ -20,5 +20,29 @@ pub fn readmap(file_path: &std::path::PathBuf) -> HashMap<String, Vec<String>>{
         }
     }
 
+
     return map;
+}
+
+pub fn readdict(file_path: &std::path::PathBuf) -> (HashMap<String, bool>,HashMap<String, bool>){
+    let file = File::open(file_path).expect("Failed to open file");
+    let reader = BufReader::new(file);
+
+    let mut front:HashMap<String, _> = HashMap::new();
+    let mut code:HashMap<String, _> = HashMap::new();
+
+    for line in reader.lines() {
+        if let Some((key, values)) = line.unwrap()
+            .split_whitespace()
+            .collect::<Vec<_>>()
+            .split_first() {
+                front.insert(
+                    key.to_string(),
+                    true
+                );
+                code.insert(values[0].to_string(), true);
+        }
+    }
+
+    return (front,code);
 }
