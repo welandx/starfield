@@ -5,7 +5,7 @@ mod word;
 
 #[derive(Parser)]
 struct Cli {
-    path: std::path::PathBuf,
+    map: std::path::PathBuf,
     danzi: std::path::PathBuf,
     dict: std::path::PathBuf,
     add: std::path::PathBuf,
@@ -14,7 +14,7 @@ struct Cli {
 fn main() {
     let args = Cli::parse();
     //let sf_map: HashMap<String, String> = HashMap::new();
-    let map = starfield::readmap(&args.path);
+    let map = starfield::readmap(&args.map);
     let danzi = starfield::readmap(&args.danzi);
     let (word, code) = starfield::readdict(&args.dict);
     let file = File::open(&args.add).expect("no such file");
