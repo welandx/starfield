@@ -21,7 +21,12 @@ fn test_main() -> Result<(), Box<dyn std::error::Error>>{
 彩六	chlqu
 女武神	nwea
 兆亿	fzyk
-兆亿	qzyk"));
+兆亿	qzyk
+超级碗	wjwva
+超级碗	jjwv
+霜华	emhq
+霜华	exhq
+霜雪千年	exqnv"));
 
     Ok(())
 }

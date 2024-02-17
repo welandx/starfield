@@ -13,7 +13,10 @@ fn word_to_pinyin3(hans: &String, map: &HashMap<String, Vec<String>>) -> (String
             res.push(current_pinyin[0].chars().nth(0).unwrap());
             res_fly.push(current_pinyin[0].chars().nth(0).unwrap());
 
-            if current_pinyin.len() == 2 {
+            if current_pinyin.len() == 2
+                && current_pinyin[0].chars().nth(0).unwrap()
+                    != current_pinyin[1].chars().nth(0).unwrap()
+            {
                 has_fly = true;
                 res_fly.pop();
                 res_fly.push(current_pinyin[1].chars().nth(0).unwrap());

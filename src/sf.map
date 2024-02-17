@@ -43,7 +43,7 @@ chou wd
 chua wq
 chuai wg
 chuan wt
-chuang wx
+chuang wx wm
 chui wb
 chuo wl
 zha fs
@@ -53,7 +53,7 @@ zhou fd
 zhua fq
 zhuai fg
 zhuan ft
-zhuang fx
+zhuang fx fm
 zhui fb
 zhuo fl
 siu sq
@@ -82,7 +82,7 @@ so sl
 suo sl
 sao sz
 siang sx
-suang sx
+suang sx sm
 siao sc
 sin sb
 sui sb
@@ -116,7 +116,7 @@ sho el
 shuo el
 shao ez
 shiang ex
-shuang ex
+shuang ex em
 shiao ec
 shin eb
 shui eb
@@ -150,7 +150,7 @@ qo ql
 quo ql
 qao qz
 qiang qx
-quang qx
+quang qx qm
 qiao qc
 qin qb
 qui qb
@@ -184,7 +184,7 @@ wo wl
 wuo wl
 wao wz
 wiang wx
-wuang wx
+wuang wx wm
 wiao wc
 win wb
 wui wb
@@ -218,7 +218,7 @@ ro rl
 ruo rl
 rao rz
 riang rx
-ruang rx
+ruang rx rm
 riao rc
 rin rb
 rui rb
@@ -252,7 +252,7 @@ to tl
 tuo tl
 tao tz
 tiang tx
-tuang tx
+tuang tx tm
 tiao tc
 tin tb
 tui tb
@@ -286,7 +286,7 @@ yo yl
 yuo yl
 yao yz
 yiang yx
-yuang yx
+yuang yx ym
 yiao yc
 yin yb
 yui yb
@@ -320,7 +320,7 @@ po pl
 puo pl
 pao pz
 piang px
-puang px
+puang px pm
 piao pc
 pin pb
 pui pb
@@ -354,7 +354,7 @@ do dl
 duo dl
 dao dz
 diang dx
-duang dx
+duang dx dm
 diao dc
 din db
 dui db
@@ -388,7 +388,7 @@ fo fl
 fuo fl
 fao fz
 fiang fx
-fuang fx
+fuang fx fm
 fiao fc
 fin fb
 fui fb
@@ -422,7 +422,7 @@ go gl
 guo gl
 gao gz
 giang gx
-guang gx
+guang gx gm
 giao gc
 gin gb
 gui gb
@@ -456,7 +456,7 @@ ho hl
 huo hl
 hao hz
 hiang hx
-huang hx
+huang hx hm
 hiao hc
 hin hb
 hui hb
@@ -490,7 +490,7 @@ jo jl
 juo jl
 jao jz
 jiang jx
-juang jx
+juang jx jm
 jiao jc
 jin jb
 jui jb
@@ -524,7 +524,7 @@ ko kl
 kuo kl
 kao kz
 kiang kx
-kuang kx
+kuang kx km
 kiao kc
 kin kb
 kui kb
@@ -558,7 +558,7 @@ lo ll
 luo ll
 lao lz
 liang lx
-luang lx
+luang lx lm
 liao lc
 lin lb
 lui lb
@@ -592,7 +592,7 @@ zo zl
 zuo zl
 zao zz
 ziang zx
-zuang zx
+zuang zx zm
 ziao zc
 zin zb
 zui zb
@@ -626,7 +626,7 @@ xo xl
 xuo xl
 xao xz
 xiang xx
-xuang xx
+xuang xx xm
 xiao xc
 xin xb
 xui xb
@@ -660,7 +660,7 @@ co cl
 cuo cl
 cao cz
 ciang cx
-cuang cx
+cuang cx cm
 ciao cc
 cin cb
 cui cb
@@ -694,7 +694,7 @@ bo bl
 buo bl
 bao bz
 biang bx
-buang bx
+buang bx bm
 biao bc
 bin bb
 bui bb
@@ -728,7 +728,7 @@ no nl
 nuo nl
 nao nz
 niang nx
-nuang nx
+nuang nx nm
 niao nc
 nin nb
 nui nb
@@ -762,7 +762,7 @@ mo ml
 muo ml
 mao mz
 miang mx
-muang mx
+muang mx mm
 miao mc
 min mb
 mui mb
