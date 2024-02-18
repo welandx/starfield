@@ -53,26 +53,29 @@ fn word_to_pinyin(hans: &String, map: &HashMap<String, Vec<String>>) -> (String,
 }
 
 fn apply_danzi_correction(
-    han: &str,
+    han: &String,
     res: &mut String,
-    prefix_index: &mut usize,
     danzi: &HashMap<String, Vec<String>>,
-    code: &HashMap<String, bool>,
+    code: &mut HashMap<String, bool>,
 ) {
+
+    let mut index=0;
     while res.len() < 6 {
         if code.contains_key(res) {
             res.push(
-                danzi.get(&han[*prefix_index..*prefix_index + 3]).unwrap()[0]
+                danzi.get(&String::from(han.chars().nth(index).unwrap())).unwrap()[0]
                     .chars()
                     .nth(2)
                     .unwrap(),
             );
-            *prefix_index += 3;
+            index += 1;
         } else {
             println!("{}\t{}", han, res);
+            code.insert(res.to_string(), true);
             return;
         }
     }
+    code.insert(res.to_string(), true);
     println!("{}\t{}", han, res);
 }
 
@@ -80,12 +83,14 @@ pub fn word2(
     hans: &String,
     map: &HashMap<String, Vec<String>>,
     danzi: &HashMap<String, Vec<String>>,
-    word: &HashMap<String, bool>,
-    code: &HashMap<String, bool>,
+    word: &mut HashMap<String, bool>,
+    code: &mut HashMap<String, bool>,
 ) {
     if word.contains_key(hans) {
         return;
     }
+
+    word.insert(hans.to_string(), true);
 
     let (mut res, mut res_fly, has_fly) = if hans.chars().count() == 2 {
         word_to_pinyin(hans, map)
@@ -93,24 +98,32 @@ pub fn word2(
         word_to_pinyin3(hans, map)
     };
 
+    let len = hans.chars().count();
+    let rl = res.len();
+
+    if (len==2 && rl!=4) || (len==3 && rl!=3) || (len==4 && rl!=4){
+        return;
+    }
+
+    let backhan=hans.clone();
+
     if has_fly {
         let mut index = 0;
         while res_fly.len() < 6 {
             if code.contains_key(&res_fly) {
                 res_fly.push(
-                    danzi.get(&hans[index..index + 3]).unwrap()[0]
+                    danzi.get(&String::from(hans.chars().nth(index).unwrap())).unwrap()[0]
                         .chars()
                         .nth(2)
                         .unwrap(),
                 );
-                index += 3;
+                index += 1;
             } else {
                 break;
             }
         }
         println!("{}\t{}", hans, res_fly);
+        code.insert(res_fly, true);
     }
-
-    let mut index = 0;
-    apply_danzi_correction(hans, &mut res, &mut index, danzi, code);
+    apply_danzi_correction(&backhan, &mut res, danzi, code);
 }

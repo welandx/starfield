@@ -1,6 +1,7 @@
 use assert_cmd::{prelude::*}; // Add methods on commands
 use predicates::prelude::*; // Used for writing assertions
 use std::process::Command; // Run programs
+use pinyin::ToPinyin;
 #[test]
 fn test_main() -> Result<(), Box<dyn std::error::Error>>{
     let mut cmd = Command::cargo_bin("starfield")?;
@@ -26,7 +27,10 @@ fn test_main() -> Result<(), Box<dyn std::error::Error>>{
 超级碗	jjwv
 霜华	emhq
 霜华	exhq
-霜雪千年	exqnv"));
+霜雪千年	exqnv
+转圜	fthtv
+转环	fthtvv
+转桓	fthtvv"));
 
     Ok(())
 }
