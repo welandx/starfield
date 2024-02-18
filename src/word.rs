@@ -62,6 +62,10 @@ fn apply_danzi_correction(
     let mut index=0;
     while res.len() < 6 {
         if code.contains_key(res) {
+            let tmp = han.chars().nth(index).unwrap();
+            if !danzi.contains_key(&tmp.to_string()){
+                return;
+            }
             res.push(
                 danzi.get(&String::from(han.chars().nth(index).unwrap())).unwrap()[0]
                     .chars()
@@ -111,6 +115,10 @@ pub fn word2(
         let mut index = 0;
         while res_fly.len() < 6 {
             if code.contains_key(&res_fly) {
+                let tmp = hans.chars().nth(index).unwrap();
+                if !danzi.contains_key(&tmp.to_string()){
+                    return;
+                }
                 res_fly.push(
                     danzi.get(&String::from(hans.chars().nth(index).unwrap())).unwrap()[0]
                         .chars()
